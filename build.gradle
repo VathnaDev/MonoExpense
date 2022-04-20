@@ -1,4 +1,90 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.app = [
+            'id'          : 'app.name',
+            'versionCode' : 10000,
+            'versionName' : '1.0.0.00',
+            'xVersionCode': 10000,
+            'xVersionName': '1.0.0.00'
+    ]
+    ext.sdk = [
+            'compile': 31,
+            'min'    : 21,
+            'target' : 31
+    ]
+    ext.kotlinx = '1.6.10'
+    ext.google = [
+            'services'   : '4.3.3',
+            'hilt'       : '2.38.1',
+            'material'   : '1.7.0-alpha01',
+            'gson'       : '2.8.5',
+            'analytics'  : '20.1.2',
+            'crashlytics': '18.2.9',
+            'firestore'  : '24.1.1'
+    ]
+    ext.androidx = [
+            'hilt'              : '1.0.0-alpha03',
+            'multidex'          : '2.0.1',
+            'core'              : '1.9.0-alpha02',
+            'appcompat'         : '1.4.1',
+            'fragment'          : '1.4.1',
+            'viewpager2'        : '1.1.0-beta01',
+            'constraintlayout'  : '2.1.3',
+            'swiperefreshlayout': '1.1.0',
+            'recyclerview'      : '1.3.0-alpha02',
+            'navigation'        : '2.4.2',
+            'safeArgs'          : '2.4.2',
+            'lifecycle'         : '2.5.0-alpha06',
+            'lifecycleTesting'  : '2.1.0',
+            'room'              : '2.4.2',
+            'roomCompiler'      : '2.1.0',
+            'paging'            : '3.1.1',
+            'testCore'          : '1.4.0',
+            'testRunner'        : '1.4.0',
+            'testRules'         : '1.4.0',
+            'testJunit'         : '1.1.3',
+            'testEspresso'      : '3.4.0'
+    ]
+    ext.rx = [
+            'java'   : '2.2.10',
+            'android': '2.1.1',
+            'kotlin' : '2.4.0'
+    ]
+    ext.square = [
+            'retrofit': '2.6.2',
+            'okhttp'  : '4.8.1'
+    ]
+    ext.stetho = '1.6.0'
+    ext.glide = '4.13.0'
+    ext.timber = '4.7.1'
+    ext.lottie = '3.4.0'
+    ext.jodaTime = '2.10.5'
+    ext.mlkit = '16.1.3'
+    ext.cameraKit = '1.0.0-beta1'
+    ext.jpegKit = '0.1.0'
+    ext.ktCoroutines = '1.3.9'
+    ext.signature = '1.3.1'
+    ext.androidPdfViewer = '2.8.2'
+    ext.easypermissions = '3.0.0'
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinx"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$google.hilt"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$androidx.safeArgs"
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+    }
+}
+
+
 plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false
