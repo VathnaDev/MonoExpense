@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onBoardFragment">
+
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.luther.monoexpense.feature.onboarding.OnBoardFragment"
+        android:label="OnBoardFragment" />
+</navigation>
